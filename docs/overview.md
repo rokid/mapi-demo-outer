@@ -22,10 +22,9 @@
 
 
 #### WebSocket 接入
-- [语音识别（ASR）WebSocket 接入Demo（JAVA）](https://github.com/Rokid/rokid-speech)
-- [ 语音合成（TTS）WebSocket 接入Demo（JAVA）](https://github.com/Rokid/speech-python-demo)
+- [语音识别（ASR）WebSocket 接入Demo（JAVA）](https://github.com/Rokid/mapi-demo-outer/blob/master/src/main/java/com/rokid/open/mapi/demo/demo/WebSocketAsrDemo.java)
+- [ 语音合成（TTS）WebSocket 接入Demo（JAVA）](https://github.com/Rokid/mapi-demo-outer/blob/master/src/main/java/com/rokid/open/mapi/demo/demo/WebSocketTtsDemo.java)
 
 #### HTTP 接入
-- [ 语音识别（ASR） HTTP 接入Demo（JAVA）](https://developer.rokid.com/docs/3-ApiReference/openvoice-http-asr.html)
-- [ 语音合成（TTS） HTTP 接入Demo（JAVA）](https://developer.rokid.com/docs/3-ApiReference/openvoice-http-tts.html)
-
+- [ 语音识别（ASR） HTTP 接入Demo（JAVA）](https://github.com/Rokid/mapi-demo-outer/blob/master/src/main/java/com/rokid/open/mapi/demo/demo/HttpAsrDemo.java)
+- [ 语音合成（TTS） HTTP 接入Demo（JAVA）](https://github.com/Rokid/mapi-demo-outer/blob/master/src/main/java/com/rokid/open/mapi/demo/demo/HttpTtsDemo.java)
