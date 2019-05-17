@@ -1,0 +1,58 @@
+syntax = "proto2";
+
+
+option java_package = "com.rokid.manhattan.open.speech.v2";
+
+package rokid.inner.asr.business;
+
+
+message Options {
+
+   // 语音流编码方式(PCM)
+  required string codec = 1;
+    // 激活词
+  optional string voiceTrigger = 2;
+    // asr引擎(ZH/KID)
+  required string engine = 3;
+    // 是否需要热词
+  optional  bool needHotWords = 4;
+    // 设备类型Id
+  optional  string deviceTypeId = 5;
+    // 设备Id
+  optional  string deviceId = 6;
+
+  optional bool noIntermediateAsr = 7;
+
+}
+
+message AsrRequest {
+
+
+  // 请求Id
+  required  int32 id = 1;
+    // 包类型(START/VOICE/END/ONESHOT)
+  required  string type = 2;
+    // ASR 第一个包配置信息
+  optional  Options options = 3;
+    // 语音流包列表
+  optional bytes voices = 4;
+
+
+}
+
+message AsrResponse {
+  // 请求Id
+  required  int32 id = 1;
+    // 返回类型(INTERMEDIATE(中间结果)/FINISH(最终结果))
+  required  string type = 2;
+    // 解析后得到的语句
+  optional  string asr = 3;
+    // score[0]=per am score; score[1]=glob am score; score[2]=glob lm score
+  repeated float scores = 4;
+    // 处理结果(SUCCESS/ERROR)
+  required  string result = 5;
+
+  optional string asr_phoneticisms = 6;
+
+
+}

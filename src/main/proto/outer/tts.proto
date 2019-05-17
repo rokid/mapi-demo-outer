@@ -1,0 +1,26 @@
+syntax = "proto2";
+
+option java_package = "com.rokid.manhattan.open.tts";
+option java_multiple_files = true;
+
+package rokid.inner.tts;
+
+service Business {
+  rpc process(Request) returns (stream Response);
+}
+message Request {
+  required string text         = 1;
+  required string declaimer    = 2;
+  required string codec        = 3;
+  required string content_type = 4;
+  optional int32 id            = 5;
+}
+
+message Response {
+
+  optional string text         = 1;
+  optional bytes voice         = 2;
+  optional bool final          = 3;
+  optional string result       = 4;
+  optional int32 id            = 5;
+}

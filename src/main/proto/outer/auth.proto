@@ -1,0 +1,23 @@
+syntax = "proto2";
+
+option java_package = "com.rokid.manhattan.open.speech.auth";
+package rokid.open.speech.auth;
+
+enum AuthErrorCode {
+  SUCCESS = 0;
+  AUTH_FAILED = 1;
+}
+
+message AuthRequest {
+  required string key = 1;
+  required string device_type_id = 2;
+  required string device_id = 3;
+  required string version = 4;
+  required string time = 5;
+  required string sign = 6;
+  required string service =7;
+}
+
+message AuthResponse {
+  required AuthErrorCode result = 1;
+}
