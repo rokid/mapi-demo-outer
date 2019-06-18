@@ -122,16 +122,17 @@ public class WebSocketAsrDemo {
 
       @Override
       public void onMessage(WebSocket webSocket, okio.ByteString bytes) {
-
-        System.out.println("onMessage binary:" + PbUtil
-            .encode(bytes.toByteArray(), AsrResponse.getDefaultInstance()));
-
         AsrResponse asrResponse = PbUtil
             .encode(bytes.toByteArray(), AsrResponse.getDefaultInstance());
 
         System.out.println(asrResponse);
         System.out.println(asrResponse.getAsr());
         super.onMessage(webSocket, bytes);
+
+        // You can remove this logic if you are reusing the connection
+        if ("FINISH".equals(asrResponse.getType())) {
+          webSocket.close(4000, "Client close connection after FINISH");
+        }
       }
 
       @Override
