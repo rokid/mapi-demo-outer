@@ -138,7 +138,7 @@ public class WebSocketAsrDemo {
       public void onClosing(WebSocket webSocket, int code, String reason) {
         System.out.println("onClosing: code:" + code + " reason:" + reason);
         super.onClosing(webSocket, code, reason);
-
+        webSocket.close(code,reason);
       }
 
       @Override
@@ -156,6 +156,8 @@ public class WebSocketAsrDemo {
 
       }
     });
+    client.dispatcher().executorService().shutdown();
+    client.connectionPool().evictAll();
   }
 
 
