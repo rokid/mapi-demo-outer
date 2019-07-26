@@ -20,9 +20,16 @@ message Options {
   optional  string deviceTypeId = 5;
     // 设备Id
   optional  string deviceId = 6;
-
+  // 是否返回中间结果
   optional bool noIntermediateAsr = 7;
-
+  // 额外配置信息
+  optional string extensionOptions = 8; 
+  // 超过该时间没有结果返回就会超时，默认10s
+  optional int32 recv_timeout_sec = 9;
+  // 是否在后处理中执行ITN，设置为true时，中文数字将转为阿拉伯数字输出，默认是False
+  optional bool enable_itn = 10;
+  // 是否在后处理中添加标点，默认是False
+  optional bool enable_punctuation = 11;
 }
 
 message AsrRequest {

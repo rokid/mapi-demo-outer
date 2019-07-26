@@ -76,6 +76,8 @@ public class WebSocketAsrDemo {
                       .setNeedHotWords(false)
                       .setEngine("zh")
                       .setVoiceTrigger("")
+                      .setEnableItn(false)
+                      .setEnablePunctuation(false)
                       .build())
 
                   .build();
